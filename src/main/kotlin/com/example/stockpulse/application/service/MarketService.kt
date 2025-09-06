@@ -16,14 +16,14 @@ class MarketService(
 
     fun getMarkets(type: MarketType, date: LocalDate): List<DailyTradingDto> {
         return when(type){
-            MarketType.KOSPI -> marketClient.getKospiMarket(date)?.outBlock1 ?:emptyList()
-            MarketType.KOSDAQ -> marketClient.getKosdaqMarket(date)?.outBlock1 ?:emptyList()
+            MarketType.KOSPI -> marketClient.getKospiMarket(date)?.OutBlock_1 ?:emptyList()
+            MarketType.KOSDAQ -> marketClient.getKosdaqMarket(date)?.OutBlock_1 ?:emptyList()
         }
     }
 
     fun saveMarket(targetDate: LocalDate) {
         val entity = marketClient.getKospiMarketInfo(targetDate)
-            ?.outBlock1
+            ?.OutBlock_1
             ?.map { it.toDomain() }
         stockRepository.saveAll(entity)
     }

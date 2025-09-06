@@ -4,6 +4,6 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
 
 @JsonNaming(PropertyNamingStrategies.UpperSnakeCaseStrategy::class)
-data class KrxResponse(
-    val outBlock1: List<DailyTradingDto>  // OUT_BLOCK_1
+data class KrxResponse<T>(
+    val outBlock1: List<T> // OUT_BLOCK_1
 )

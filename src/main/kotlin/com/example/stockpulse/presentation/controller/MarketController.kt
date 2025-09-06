@@ -1,12 +1,9 @@
 package com.example.stockpulse.presentation.controller
 
-import com.example.stockpulse.domain.entity.enums.MarketType
-import com.example.stockpulse.domain.service.MarketService
+import com.example.stockpulse.application.service.MarketService
+import com.example.stockpulse.domain.entity.stock.enums.MarketType
 import com.example.stockpulse.presentation.dto.response.DailyTradingDto
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestParam
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.time.LocalDate
 
 @RestController
@@ -27,5 +24,15 @@ class MarketController(private val marketService: MarketService) {
             "sampleData" to response.take(3),
             "fullData" to response
         )
+    }
+
+
+    @PostMapping("/admin/data-sync")
+    fun manualSync(
+        @RequestParam(required = false) date: LocalDate?
+    ): String{
+        val targetDate = date ?: LocalDate.now()
+        marketService.saveMarket(targetDate);
+        return "데이터가 저장되었습니다."
     }
 }

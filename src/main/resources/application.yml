@@ -1,14 +1,13 @@
 spring:
   application:
     name: StockPulse
-  # ?????? ??
+
   datasource:
     url: jdbc:postgresql://localhost:5432/stockpulse
     username: ${DB_USERNAME:your_username}
     password: ${DB_PASSWORD:your_password}
     driver-class-name: org.postgresql.Driver
 
-  # JPA/Hibernate ??
   jpa:
     hibernate:
       ddl-auto: validate
@@ -19,7 +18,6 @@ spring:
         format_sql: true
         default_schema: public
 
-  # Spring Security ?? ?? (??? ??????)
   security:
     user:
       name: admin
@@ -38,3 +36,7 @@ logging:
     org.hibernate.SQL: DEBUG
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+krx:
+  api:
+    key: ${KRX_KEY}

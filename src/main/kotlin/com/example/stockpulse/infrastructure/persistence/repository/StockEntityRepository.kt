@@ -1,4 +1,4 @@
-package com.example.stockpulse.infrastructure.persistence
+package com.example.stockpulse.infrastructure.persistence.repository
 
 import com.example.stockpulse.infrastructure.persistence.entity.JpaStockEntity
 import org.springframework.data.jpa.repository.JpaRepository

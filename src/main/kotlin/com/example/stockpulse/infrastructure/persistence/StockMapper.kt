@@ -1,6 +1,6 @@
 package com.example.stockpulse.infrastructure.persistence
 
-import com.example.stockpulse.domain.entity.stock.Stock
+import com.example.stockpulse.domain.entity.Stock
 import com.example.stockpulse.infrastructure.persistence.entity.JpaStockEntity
 import com.example.stockpulse.presentation.dto.response.IsuInfoDto
 

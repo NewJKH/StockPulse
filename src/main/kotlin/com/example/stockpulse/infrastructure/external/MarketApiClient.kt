@@ -12,7 +12,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 @Component
-class MarketClient {
+class MarketApiClient {
 
     @Value("\${krx.api.key}")
     private lateinit var apiKey: String

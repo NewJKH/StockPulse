@@ -1,4 +1,4 @@
-package com.example.stockpulse.domain.entity.stock
+package com.example.stockpulse.domain.entity
 
 data class Stock(
     val standardCode: String,           // ISU_CD - 표준코드

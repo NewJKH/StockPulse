@@ -1,13 +1,14 @@
-package com.example.stockpulse.infrastructure.persistence
+package com.example.stockpulse.infrastructure.persistence.adapter
 
-import com.example.stockpulse.domain.entity.stock.Stock
+import com.example.stockpulse.domain.entity.Stock
 import com.example.stockpulse.domain.respository.StockRepository
 import com.example.stockpulse.infrastructure.persistence.StockMapper.toDomain
 import com.example.stockpulse.infrastructure.persistence.StockMapper.toJpaEntity
+import com.example.stockpulse.infrastructure.persistence.repository.StockEntityRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-class StockJpaRepositoryImpl(
+class StockRepositoryAdapter(
     private val stockJpaRepository: StockEntityRepository
 ) : StockRepository {
     override fun save(stock: Stock) {

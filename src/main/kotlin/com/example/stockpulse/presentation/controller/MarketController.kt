@@ -1,7 +1,7 @@
 package com.example.stockpulse.presentation.controller
 
 import com.example.stockpulse.application.service.MarketService
-import com.example.stockpulse.domain.entity.stock.enums.MarketType
+import com.example.stockpulse.domain.enums.MarketType
 import com.example.stockpulse.presentation.dto.response.DailyTradingDto
 import org.springframework.web.bind.annotation.*
 import java.time.LocalDate

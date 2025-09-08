@@ -1,8 +1,10 @@
 package com.example.stockpulse.infrastructure.persistence.entity
 
+import com.example.stockpulse.domain.enums.MarketType
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
+import java.time.LocalDate
 import java.time.LocalDateTime
 
 @Entity
@@ -28,10 +30,11 @@ class JpaStockEntity(
     val englishName: String,
 
     @Column(name = "listing_date")
-    val listingDate: String,
+    val listingDate: LocalDate,
 
     @Column(name = "market_type")
-    val marketType: String,
+    @Enumerated(EnumType.STRING)
+    val marketType: MarketType,
 
     @Column(name = "security_group")
     val securityGroup: String,
@@ -43,10 +46,10 @@ class JpaStockEntity(
     val stockCertificateType: String,
 
     @Column(name = "par_value")
-    val parValue: String,
+    val parValue: Int,
 
     @Column(name = "listed_shares")
-    val listedShares: String,
+    val listedShares: Long,
 
     @CreationTimestamp
     val createdAt: LocalDateTime = LocalDateTime.now(),

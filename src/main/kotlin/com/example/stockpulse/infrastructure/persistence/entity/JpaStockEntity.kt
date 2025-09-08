@@ -11,9 +11,6 @@ import java.time.LocalDateTime
 @Table(name = "stocks")
 class JpaStockEntity(
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
-
     @Column(name = "standard_code", unique = true)
     val standardCode: String,
 
